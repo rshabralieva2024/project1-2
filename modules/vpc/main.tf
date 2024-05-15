@@ -9,15 +9,12 @@ variable "availability_zones" {
 
 
 resource "aws_subnet" "public" {
-  count                  = 3  # Adjust the count based on your requirements
-  vpc_id                 = aws_vpc.main.id
-  availability_zone = var.availability_zones[count.index]
-  cidr_block             = "10.0.${count.index}.0/24"
+  count                   = 3  # Adjust the count based on your requirements
+  vpc_id                  = aws_vpc.main.id
+  availability_zone       = var.availability_zones[count.index]
+  cidr_block              = "10.0.${count.index}.0/24"
   map_public_ip_on_launch = true
 }
-
-
-
 
 resource "aws_subnet" "private" {
   count                  = 3
@@ -287,8 +284,3 @@ resource "aws_route53_record" "wordpress" {
   }
 }
 
-# # Create an Auto Scaling Group (ASG) using the launch template
-# resource "aws_launch_template" "wordpress" {
-#   name_prefix   = "wordpress-template-"
-#   image_id      = "ami-0900fe555666598a2"
-#   instance_type = "t2.micro"
