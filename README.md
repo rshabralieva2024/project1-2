@@ -1,6 +1,9 @@
 # project1-2
 # Terraform Module: Three-Tier Application on AWS
 
+[Cloud Architecture (1).pdf](https://github.com/rshabralieva2024/project1-2/files/15327644/Cloud.Architecture.1.pdf)
+
+
 This Terraform module sets up a three-tier application on AWS, including VPC, subnets, NAT gateways, security groups, launch configurations, auto-scaling groups, load balancers, and Route 53 configurations.
 
 ## Features
@@ -14,7 +17,8 @@ This Terraform module sets up a three-tier application on AWS, including VPC, su
 - **Launch Configuration**: Configures EC2 instances for the web application using a specified AMI.
 - **Auto Scaling Group**: Sets up an Auto Scaling Group (ASG) to manage EC2 instances.
 - **Application Load Balancer (ALB)**: Sets up an ALB for load balancing the web application.
-- **Route 53**: Configures Route 53 for DNS management.
+- **Route 53**: Configures Route 53 for DNS management.[Uploading Cloud Architecture.pdf…]()
+
 
 ## Usage
 
@@ -131,4 +135,5 @@ aws_lb_listener.wordpress
 Route 53
 aws_route53_zone.example
 aws_route53_record.wordpress
+
 
